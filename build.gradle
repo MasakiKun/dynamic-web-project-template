@@ -1,0 +1,22 @@
+plugins {
+	id("java")
+	id("war")
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+[compileJava, compileTestJava]*.options*.encoding = "UTF-8"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly("javax.servlet:javax.servlet-api:4.0.0")
+	compile("org.springframework:spring-webmvc:5.3.8")
+	compile("com.fasterxml.jackson.core:jackson-databind:2.12.3")
+}
+
+test {
+}
